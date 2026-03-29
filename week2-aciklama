@@ -1,0 +1,9 @@
+Java 21 ve Spring Boot 4.0.5 sürümü kullanılarak proje iskeleti oluşturuldu.
+
+Veritabanı Yapılandırması: PostgreSQL bağlantısı sağlandı ve Hibernate/JPA aracılığıyla tabloların otomatik oluşturulması kurgulandı.
+
+Veri Modelleri (Entities): Uygulamanın temelini oluşturan Diyetisyen, Hasta ve Randevu modelleri, aralarındaki ilişkisel bağlarla (One-to-Many, Many-to-One) birlikte tanımlandı.
+
+Veri Başlatma (Data Initialization): DataInitializer bileşeni geliştirilerek, uygulama her ayağa kalktığında veritabanının otomatik olarak örnek test verileriyle (dummy data) doldurulması sağlandı.
+
+Versiyon Kontrolü: Karşılaşılan Git senkronizasyon sorunları çözülerek tüm backend yapısı başarıyla GitHub reposuna aktarıldı.
