@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RandevuRepository extends JpaRepository<Randevu, Long> {
-    // Buraya ileride 'Diyetisyen ID'ye göre randevuları getir' gibi özel sorgular ekleyeceğiz.
 }

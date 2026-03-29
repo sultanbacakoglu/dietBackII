@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "diyetisyenler")
-@Data // Lombok: Getter, Setter ve ToString'i otomatik halleder
+@Data
 public class Diyetisyen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
