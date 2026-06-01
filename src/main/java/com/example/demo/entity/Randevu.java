@@ -14,6 +14,8 @@ public class Randevu {
 
     private LocalDateTime randevuZamani;
     private String notlar;
+    private String tip;
+    private String durum;
 
     @ManyToOne
     @JoinColumn(name = "diyetisyen_id")

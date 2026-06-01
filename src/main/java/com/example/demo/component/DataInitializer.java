@@ -53,14 +53,18 @@ public class DataInitializer implements CommandLineRunner {
         hastaRepo.saveAll(List.of(h1, h2));
 
         Randevu r1 = new Randevu();
-        r1.setRandevuZamani(LocalDateTime.now().plusHours(2));
+        r1.setRandevuZamani(LocalDateTime.now().withMinute(0).withSecond(0).withNano(0));
         r1.setNotlar("Kilo takibi ve yağ ölçümü");
+        r1.setTip("Kontrol");
+        r1.setDurum("bekliyor");
         r1.setDiyetisyen(d1);
         r1.setHasta(h1);
 
         Randevu r2 = new Randevu();
-        r2.setRandevuZamani(LocalDateTime.now().plusDays(1).withHour(10).withMinute(0));
+        r2.setRandevuZamani(LocalDateTime.now().plusHours(2).withMinute(0).withSecond(0).withNano(0));
         r2.setNotlar("Yeni beslenme programı oluşturma");
+        r2.setTip("İlk Görüşme");
+        r2.setDurum("bekliyor");
         r2.setDiyetisyen(d1);
         r2.setHasta(h2);
 
