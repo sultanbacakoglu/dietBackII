@@ -51,6 +51,11 @@ public class HastaService {
         });
     }
 
+    public List<HastaDTO> hastaAra(String q) {
+        return hastaRepo.findByAdSoyadContainingIgnoreCaseOrEpostaContainingIgnoreCase(q, q)
+            .stream().map(this::toDTO).collect(Collectors.toList());
+    }
+
     public void hastaSil(Long id) {
         hastaRepo.deleteById(id);
     }

@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface HastaRepository extends JpaRepository<Hasta, Long> {
     List<Hasta> findByDiyetisyenId(Long diyetisyenId);
+    List<Hasta> findByAdSoyadContainingIgnoreCaseOrEpostaContainingIgnoreCase(String adSoyad, String eposta);
 }

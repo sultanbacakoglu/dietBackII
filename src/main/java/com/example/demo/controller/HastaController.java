@@ -22,6 +22,12 @@ public class HastaController {
         return hastaService.tumHastalariGetir();
     }
 
+    @GetMapping("/ara")
+    public List<HastaDTO> ara(@RequestParam String q) {
+        if (q == null || q.trim().length() < 2) return hastaService.tumHastalariGetir();
+        return hastaService.hastaAra(q.trim());
+    }
+
     @GetMapping("/diyetisyen/{diyetisyenId}")
     public List<HastaDTO> listeleByDiyetisyen(@PathVariable Long diyetisyenId) {
         return hastaService.hastalariGetir(diyetisyenId);
