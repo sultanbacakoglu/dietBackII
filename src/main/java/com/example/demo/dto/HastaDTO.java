@@ -12,5 +12,11 @@ public class HastaDTO {
     private String adSoyad;
     private String eposta;
     private String telefon;
+    private String dogumTarihi;
+    private String cinsiyet;
+    private Double boy;
+    private Double kilo;
+    private String sikayet;
+    private String notlar;
     private Long diyetisyenId;
 }

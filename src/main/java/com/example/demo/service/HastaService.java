@@ -44,9 +44,15 @@ public class HastaService {
 
     public Optional<HastaDTO> hastaGuncelle(Long id, HastaDTO dto) {
         return hastaRepo.findById(id).map(hasta -> {
-            hasta.setAdSoyad(dto.getAdSoyad());
-            hasta.setEposta(dto.getEposta());
+            if (dto.getAdSoyad() != null) hasta.setAdSoyad(dto.getAdSoyad());
+            if (dto.getEposta() != null) hasta.setEposta(dto.getEposta());
             hasta.setTelefon(dto.getTelefon());
+            hasta.setDogumTarihi(dto.getDogumTarihi());
+            hasta.setCinsiyet(dto.getCinsiyet());
+            hasta.setBoy(dto.getBoy());
+            hasta.setKilo(dto.getKilo());
+            hasta.setSikayet(dto.getSikayet());
+            hasta.setNotlar(dto.getNotlar());
             return toDTO(hastaRepo.save(hasta));
         });
     }
@@ -66,6 +72,12 @@ public class HastaService {
             hasta.getAdSoyad(),
             hasta.getEposta(),
             hasta.getTelefon(),
+            hasta.getDogumTarihi(),
+            hasta.getCinsiyet(),
+            hasta.getBoy(),
+            hasta.getKilo(),
+            hasta.getSikayet(),
+            hasta.getNotlar(),
             hasta.getDiyetisyen() != null ? hasta.getDiyetisyen().getId() : null
         );
     }
@@ -76,6 +88,12 @@ public class HastaService {
         hasta.setAdSoyad(dto.getAdSoyad());
         hasta.setEposta(dto.getEposta());
         hasta.setTelefon(dto.getTelefon());
+        hasta.setDogumTarihi(dto.getDogumTarihi());
+        hasta.setCinsiyet(dto.getCinsiyet());
+        hasta.setBoy(dto.getBoy());
+        hasta.setKilo(dto.getKilo());
+        hasta.setSikayet(dto.getSikayet());
+        hasta.setNotlar(dto.getNotlar());
         if (dto.getDiyetisyenId() != null) {
             Diyetisyen diyetisyen = diyetisyenRepo.findById(dto.getDiyetisyenId())
                 .orElseThrow(() -> new RuntimeException("Diyetisyen bulunamadı"));
